@@ -1,0 +1,12 @@
+[project]
+name = "ai-mentor"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=2.49.0",
+    "psycopg>=3.3.4",
+    "python-dotenv>=1.2.2",
+    "sqlalchemy>=2.0.51",
+]

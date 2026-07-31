@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ai-mentor
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: mentor_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: pwd
+    
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
