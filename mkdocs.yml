@@ -26,7 +26,7 @@ theme:
 nav:
   - Home: index.md
   - Academic Security Research: RESEARCH.md
-  - Lab Notes & Traces: docs/security_research.md
+  - Lab Notes & Traces: security_research.md
 
 markdown_extensions:
   - pymdownx.highlight:
