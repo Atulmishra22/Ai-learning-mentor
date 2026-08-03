@@ -1,11 +1,11 @@
 import subprocess
-from pathlib import Path
+from mentor.workspace import get_workspace_dir
 
 ALLOWED_EXECUTABLES = {"pytest", "python", "uv", "ruff", "mypy"}
 FORBIDDEN_KEYWORDS = {"rm", "del", "rmdir", "-c", "--command", "shutil"}
 
-def execute_workspace_command(project_name: str, command: str) -> str:
-    """Executes a whitelisted development command inside workspace/{project_name}/."""
+def execute_workspace_command(command: str, project_name: str = "workspace") -> str:
+    """Executes a whitelisted development command inside the active workspace."""
     tokens = command.strip().split()
     if not tokens:
         raise ValueError("Empty command string provided.")
@@ -21,8 +21,7 @@ def execute_workspace_command(project_name: str, command: str) -> str:
         if token.lower() in FORBIDDEN_KEYWORDS:
             raise PermissionError(f"Command contains forbidden token/flag: '{token}'")
 
-    cwd = (Path.cwd() / "workspace" / project_name).resolve()
-    cwd.mkdir(parents=True, exist_ok=True)
+    cwd = get_workspace_dir()
 
     # 3. Safe execution
     result = subprocess.run(
