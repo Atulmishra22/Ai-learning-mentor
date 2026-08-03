@@ -15,6 +15,8 @@
         <link rel="canonical" href="https://atulmishra22.github.io/Ai-learning-mentor/security_research/">
       
       
+        <link rel="prev" href="../RESEARCH/">
+      
       
       
         
@@ -25,7 +27,7 @@
     
     
       
-        <title>Prompt Injection Security Research - AI Learning Mentor</title>
+        <title>Lab Notes & Traces - AI Learning Mentor</title>
       
     
     
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Prompt Injection Security Research
+              Lab Notes & Traces
             
           </span>
         </div>
@@ -214,7 +216,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../RESEARCH.md" class="md-tabs__link">
+      <a href="../RESEARCH/" class="md-tabs__link">
         
   
   
@@ -231,9 +233,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../docs/security_research.md" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -325,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../RESEARCH.md" class="md-nav__link">
+      <a href="../RESEARCH/" class="md-nav__link">
         
   
   
@@ -349,10 +353,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../docs/security_research.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Notes & Traces
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -368,6 +399,198 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ai-learning-mentor-llm-tool-calling-attack-surface-empirical-lab-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Learning Mentor — LLM Tool Calling Attack Surface &amp; Empirical Lab Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#round-1-baseline-explicit-whitelist-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 1 — Baseline (Explicit Whitelist Description)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#round-2-5-parameter-reasoning-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 2 — 5-Parameter Reasoning Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#round-3-meta-suspicion-rules-multi-trial-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round 3 — Meta-Suspicion Rules &amp; Multi-Trial Benchmark
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Round 3 — Meta-Suspicion Rules &amp; Multi-Trial Benchmark">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statistical-multi-trial-results-3-trials-temp07" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistical Multi-Trial Results (3 Trials @ Temp=0.7):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layer-2-code-enforcement-combined-execution-trace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer 2 Code Enforcement &amp; Combined Execution Trace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layer 2 Code Enforcement &amp; Combined Execution Trace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#live-combined-trace-teststest_full_agent_sandbox_looppy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live Combined Trace (tests/test_full_agent_sandbox_loop.py):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#empirical-control-experiment-canned-refusal-vs-custom-block-protocol-curl-vs-rm-rf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empirical Control Experiment: Canned Refusal vs. Custom Block Protocol (curl vs rm -rf)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#empirical-benchmark-isolated-execution-layer-vs-llm-trace-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empirical Benchmark: Isolated Execution Layer vs. LLM Trace Evaluation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Empirical Benchmark: Isolated Execution Layer vs. LLM Trace Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-a-isolated-execution-unit-test-deterministic-no-llm-in-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part A: Isolated Execution Unit Test (Deterministic, NO LLM in Loop)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-b-full-trace-llm-loop-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part B: Full Trace LLM Loop Benchmark
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-architecture-defense-in-depth-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Architecture &amp; Defense-in-Depth Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
