@@ -1,0 +1,39 @@
+site_name: AI Learning Mentor
+site_description: Stack-Agnostic Senior Staff Engineering Coach, Sandboxed Agent Engine & Security Research
+site_author: Atul Mishra
+site_url: https://atulmishra22.github.io/Ai-learning-mentor/
+
+repo_name: Atulmishra22/Ai-learning-mentor
+repo_url: https://github.com/Atulmishra22/Ai-learning-mentor
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: cyan
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Academic Security Research: RESEARCH.md
+  - Lab Notes & Traces: docs/security_research.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - admonition
+  - tables
+  - toc:
+      permalink: true
